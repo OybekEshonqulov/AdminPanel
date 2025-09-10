@@ -1,0 +1,23 @@
+﻿@model AdminPanel1.DbContext.User
+@{
+    ViewData["Title"] = "User Tafsilotlari";
+}
+
+<h2>User Tafsilotlari</h2>
+
+<div class="mb-3">
+    <strong>Email:</strong> @Model.Email
+</div>
+<div class="mb-3">
+    <strong>Username:</strong> @Model.UserName
+</div>
+<div class="mb-3">
+    <strong>Full Name:</strong> @Model.FullName
+</div>
+<div class="mb-3">
+    <strong>Roles:</strong> @string.Join(", ", ViewBag.Roles as IList<string>)
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Orqaga</a>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Tahrirlash</a>
+<a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">O'chirish</a>

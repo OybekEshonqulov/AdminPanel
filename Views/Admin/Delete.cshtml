@@ -1,0 +1,23 @@
+﻿@model AdminPanel1.DbContext.User
+@{
+    ViewData["Title"] = "Userni O'chirish";
+}
+
+<h2>Userni O'chirish</h2>
+
+<div class="mb-3">
+    <strong>Email:</strong> @Model.Email
+</div>
+<div class="mb-3">
+    <strong>Username:</strong> @Model.UserName
+</div>
+<div class="mb-3">
+    <strong>Full Name:</strong> @Model.FullName
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-danger">Ha, O'chirish</button>
+    <a asp-action="Index" class="btn btn-secondary">Yo'q, Orqaga</a>
+</form>
